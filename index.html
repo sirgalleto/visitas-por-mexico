@@ -21,19 +21,11 @@
 
     miner.on('found', function() {
       console.log('Hash found');
-    })
+    });
+
 	  miner.on('accepted', function() {
       console.log('Hash acepted');
-    })
-
-	// Update stats once per second
-	  setInterval(function() {
-		  var hashesPerSecond = miner.getHashesPerSecond();
-		  var totalHashes = miner.getTotalHashes();
-		  var acceptedHashes = miner.getAcceptedHashes();
-
-      console.log(hashesPerSecond, totalHashes, acceptedHashes);
-	  }, 1000);
+    });
   </script>
 </head>
 <body>
